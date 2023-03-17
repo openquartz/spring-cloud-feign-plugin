@@ -13,7 +13,6 @@ import org.springframework.beans.factory.BeanFactoryAware;
 import org.springframework.cloud.openfeign.ribbon.LoadBalancerFeignClient;
 
 /**
- * Dynamic FeignTimeout{@link org.svnee.feign.plugin.starter.annotation.FeignTimeout} Annotation Advisor
  * dynamic set feign timeout for spring cloud feign!
  *
  * @author svnee
