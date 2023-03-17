@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+org.svnee.feign.plugin.starter.autoconfig.FeignPluginAutoConfiguration
