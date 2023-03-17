@@ -83,6 +83,7 @@ public class DynamicFeignTimeoutInterceptor implements MethodInterceptor {
      * @return wrapper options
      */
     private Options wrapperTimeoutOptions(Map<String, TimeoutProperty> configs, URI uri) {
+        // support ip+host
         TimeoutProperty property = configs.get(uri.getHost() + uri.getPath());
         if (property == null) {
             property = configs.get(uri.getHost());
