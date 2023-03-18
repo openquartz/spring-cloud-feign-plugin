@@ -6,9 +6,9 @@
 但是`Spring-Cloud-OpenFeign` 不支持 动态调整。此插件主要是针对`Spring-Cloud-OpenFeign`的做的一个插件式的增强。
 
 ### 特性
+支持`SpringCloud-Config`、`Spring-Cloud-Nacos`等的基于`org.springframework.cloud.context.config.annotation.RefreshScope`动态配置发布刷新
 
 #### 1、支持服务级别的设置超时时间
-
 设置配置
 
 `feign.plugin.client.config.{config-alias}.host = {host}`、\
