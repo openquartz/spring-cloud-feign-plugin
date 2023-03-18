@@ -10,9 +10,9 @@
 #### 1、支持服务级别的设置超时时间
 
 设置配置
-`feign.plugin.client.config.{config-alias}.host = {host}`、
-`feign.plugin.client.config.{config-alias}.path = *`、
-`feign.plugin.client.config.{config-alias}.connect-timeout = {connect-timeout}`、
+`feign.plugin.client.config.{config-alias}.host = {host}`、\
+`feign.plugin.client.config.{config-alias}.path = *`、\
+`feign.plugin.client.config.{config-alias}.connect-timeout = {connect-timeout}`、\
 `feign.plugin.client.config.{config-alias}.read-timeout = {read-timeout}`
 例如：
 
@@ -26,9 +26,9 @@ feign.plugin.client.config.server-one-all.connect-timeout=100000
 #### 2、支持指定接口级别的超时时间
 
 设置配置
-`feign.plugin.client.config.{config-alias}.host = {host}`、
-`feign.plugin.client.config.{config-alias}.path = {url-path}`、
-`feign.plugin.client.config.{config-alias}.connect-timeout = {connect-timeout}`、
+`feign.plugin.client.config.{config-alias}.host = {host}`、\
+`feign.plugin.client.config.{config-alias}.path = {url-path}`、\
+`feign.plugin.client.config.{config-alias}.connect-timeout = {connect-timeout}`、\
 `feign.plugin.client.config.{config-alias}.read-timeout = {read-timeout}`
 例如：
 
