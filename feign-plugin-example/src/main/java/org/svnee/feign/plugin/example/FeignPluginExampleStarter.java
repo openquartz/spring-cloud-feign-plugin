@@ -2,12 +2,14 @@ package org.svnee.feign.plugin.example;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
  * FeignPluginExampleStarter
  *
  * @author svnee
  **/
+@EnableFeignClients
 @SpringBootApplication
 public class FeignPluginExampleStarter {
 

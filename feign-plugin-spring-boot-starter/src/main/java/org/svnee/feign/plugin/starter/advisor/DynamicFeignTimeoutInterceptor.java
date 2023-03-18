@@ -3,13 +3,16 @@ package org.svnee.feign.plugin.starter.advisor;
 import feign.Request;
 import feign.Request.Options;
 import java.net.URI;
-import java.util.Map;
+import java.util.List;
+import java.util.Objects;
 import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.svnee.feign.plugin.starter.autoconfig.property.FeignTimeoutProperties;
 import org.svnee.feign.plugin.starter.autoconfig.property.FeignTimeoutProperties.TimeoutProperty;
+import org.svnee.feign.plugin.starter.constants.Constants;
+import org.svnee.feign.plugin.starter.utils.CollectionUtils;
 import org.svnee.feign.plugin.starter.utils.MapUtils;
 
 /**
@@ -57,12 +60,11 @@ public class DynamicFeignTimeoutInterceptor implements MethodInterceptor {
         Object[] args = invocation.getArguments();
         if (MapUtils.isNotEmpty(this.properties.getConfig())) {
             try {
-                Map<String, TimeoutProperty> configs = this.properties.getConfig();
                 Options options = null;
                 if (args.length == FEIGN_ARGS_LEN) {
                     Request request = (Request) args[FEIGN_REQUEST_ARGS_INDEX];
                     URI uri = URI.create(request.url());
-                    options = this.wrapperTimeoutOptions(configs, uri);
+                    options = this.wrapperTimeoutOptions(this.properties.getHostConfig(uri.getHost()), uri);
                 }
 
                 if (options != null) {
@@ -78,17 +80,17 @@ public class DynamicFeignTimeoutInterceptor implements MethodInterceptor {
     /**
      * get timeout options
      *
-     * @param configs timeout configs
+     * @param propertyList timeout configs
      * @param uri uri
      * @return wrapper options
      */
-    private Options wrapperTimeoutOptions(Map<String, TimeoutProperty> configs, URI uri) {
+    private Options wrapperTimeoutOptions(List<TimeoutProperty> propertyList, URI uri) {
         // support ip+host
-        TimeoutProperty property = configs.get(uri.getHost() + uri.getPath());
-        if (property == null) {
-            property = configs.get(uri.getHost());
+        if (CollectionUtils.isEmpty(propertyList)) {
+            return null;
         }
-
+        // match property
+        TimeoutProperty property = match(propertyList, uri.getPath());
         if (property == null) {
             return null;
         } else {
@@ -102,5 +104,24 @@ public class DynamicFeignTimeoutInterceptor implements MethodInterceptor {
 
             return new Options(property.getConnectTimeout(), property.getReadTimeout());
         }
+    }
+
+    /**
+     * match rule
+     * @param propertyList propertyList
+     * @param path uri path
+     * @return timeout property
+     */
+    private TimeoutProperty match(List<TimeoutProperty> propertyList, String path) {
+        TimeoutProperty allMathPathTimeProperty = null;
+        for (TimeoutProperty property : propertyList) {
+            if (Objects.equals(property.getPath(), path)) {
+                return property;
+            }
+            if (Objects.equals(Constants.ALL_MATCH, property.getPath())) {
+                allMathPathTimeProperty = property;
+            }
+        }
+        return allMathPathTimeProperty;
     }
 }
