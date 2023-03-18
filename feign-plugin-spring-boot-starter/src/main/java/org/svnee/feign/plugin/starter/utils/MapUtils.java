@@ -9,16 +9,16 @@ import java.util.Map;
  **/
 public final class MapUtils {
 
+    private MapUtils() {
+    }
+
     /**
      * is Empty map
      * @param map map
      * @return empty map
      */
     public static boolean isEmpty(Map<?, ?> map) {
-        if (map == null || map.isEmpty()) {
-            return true;
-        }
-        return false;
+        return map == null || map.isEmpty();
     }
 
     /**

@@ -1,6 +1,7 @@
 package org.svnee.feign.plugin.starter.constants;
 
 /**
+ * Constants
  * @author svnee
  **/
 public final class Constants {

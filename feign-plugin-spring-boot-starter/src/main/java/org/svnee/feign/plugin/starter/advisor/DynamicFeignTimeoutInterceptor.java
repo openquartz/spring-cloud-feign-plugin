@@ -108,7 +108,9 @@ public class DynamicFeignTimeoutInterceptor implements MethodInterceptor {
 
     /**
      * match rule
-     * @param propertyList propertyList
+     * first match special path rule property,then match all rule property!
+     *
+     * @param propertyList Same host's property
      * @param path uri path
      * @return timeout property
      */

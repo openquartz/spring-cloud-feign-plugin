@@ -1,6 +1,7 @@
 package org.svnee.feign.plugin.starter.advisor;
 
 import java.lang.reflect.Method;
+import java.util.Objects;
 import org.aopalliance.aop.Advice;
 import org.springframework.aop.ClassFilter;
 import org.springframework.aop.MethodMatcher;
@@ -11,6 +12,7 @@ import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.BeanFactoryAware;
 import org.springframework.cloud.openfeign.ribbon.LoadBalancerFeignClient;
+import org.springframework.lang.NonNull;
 
 /**
  * dynamic set feign timeout for spring cloud feign!
@@ -44,12 +46,12 @@ public class FeignPluginAdvisor extends AbstractPointcutAdvisor implements BeanF
         }
 
         @Override
-        public ClassFilter getClassFilter() {
+        public @NonNull ClassFilter getClassFilter() {
             return parentClazz::isAssignableFrom;
         }
 
         @Override
-        public MethodMatcher getMethodMatcher() {
+        public @NonNull MethodMatcher getMethodMatcher() {
             return new FullQualifiedNameMethodMatcher(methodName);
         }
 
@@ -62,7 +64,7 @@ public class FeignPluginAdvisor extends AbstractPointcutAdvisor implements BeanF
             }
 
             @Override
-            public boolean matches(Method method, Class<?> targetClass) {
+            public boolean matches(@NonNull Method method,@NonNull Class<?> targetClass) {
                 return matchesMethod(method);
             }
 
@@ -73,19 +75,39 @@ public class FeignPluginAdvisor extends AbstractPointcutAdvisor implements BeanF
     }
 
     @Override
-    public Pointcut getPointcut() {
+    public @NonNull Pointcut getPointcut() {
         return pointcut;
     }
 
     @Override
-    public Advice getAdvice() {
+    public @NonNull Advice getAdvice() {
         return advice;
     }
 
     @Override
-    public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
+    public void setBeanFactory(@NonNull BeanFactory beanFactory) throws BeansException {
         if (this.advice instanceof BeanFactoryAware) {
             ((BeanFactoryAware) this.advice).setBeanFactory(beanFactory);
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        if (!super.equals(o)) {
+            return false;
+        }
+        FeignPluginAdvisor that = (FeignPluginAdvisor) o;
+        return Objects.equals(advice, that.advice) && Objects.equals(pointcut, that.pointcut);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), advice, pointcut);
     }
 }
