@@ -43,7 +43,7 @@ feign.plugin.client.config.server-one-say-hello.read-timeout=100000
 feign.plugin.client.config.server-one-say-hello.connect-timeout=100000
 ```
 
-接口级别的配置优先级大于服务级别的配置,如果先匹配到接口级别的配置以接口级别为准,其次查询匹配所有的服务级别的兜底配置。
+`接口级别`的配置优先级大于`服务级别`的配置,如果先匹配到`接口级别`的配置以`接口级别`为准,其次查询匹配所有的`服务级别`的兜底配置。
 
 ### 快速开始
 
