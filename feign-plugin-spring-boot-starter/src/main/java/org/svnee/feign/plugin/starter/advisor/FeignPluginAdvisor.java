@@ -1,5 +1,6 @@
 package org.svnee.feign.plugin.starter.advisor;
 
+import feign.Client;
 import java.lang.reflect.Method;
 import java.util.Objects;
 import org.aopalliance.aop.Advice;
@@ -11,7 +12,6 @@ import org.springframework.aop.support.StaticMethodMatcher;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.BeanFactoryAware;
-import org.springframework.cloud.openfeign.ribbon.LoadBalancerFeignClient;
 import org.springframework.lang.NonNull;
 
 /**
@@ -32,7 +32,7 @@ public class FeignPluginAdvisor extends AbstractPointcutAdvisor implements BeanF
     }
 
     private Pointcut buildPointcut() {
-        return new FullyQualifiedNameMethodPoint(LoadBalancerFeignClient.class, EXECUTE_METHOD_NAME);
+        return new FullyQualifiedNameMethodPoint(Client.class, EXECUTE_METHOD_NAME);
     }
 
     private static class FullyQualifiedNameMethodPoint implements Pointcut {

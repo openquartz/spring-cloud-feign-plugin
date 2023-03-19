@@ -8,6 +8,7 @@ import org.svnee.feign.plugin.example.feign.ServerOneFeign;
 
 /**
  * TestController
+ *
  * @author svnee
  **/
 @RestController
@@ -18,8 +19,14 @@ public class TestController {
     ServerOneFeign serverOneFeign;
 
     @GetMapping("/get")
-    public void hello(){
-        serverOneFeign.sayHello();
+    public void hello() {
+
+        long startTime = System.currentTimeMillis();
+        try {
+            serverOneFeign.sayHello();
+        } finally {
+            System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"+(System.currentTimeMillis() - startTime));
+        }
     }
 
 }

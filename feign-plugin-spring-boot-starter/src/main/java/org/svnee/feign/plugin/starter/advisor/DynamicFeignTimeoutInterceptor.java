@@ -1,5 +1,6 @@
 package org.svnee.feign.plugin.starter.advisor;
 
+import feign.Client;
 import feign.Request;
 import feign.Request.Options;
 import java.net.URI;
@@ -27,21 +28,21 @@ public class DynamicFeignTimeoutInterceptor implements MethodInterceptor {
     /**
      * feign args length
      *
-     * {@link org.springframework.cloud.openfeign.ribbon.LoadBalancerFeignClient#execute(feign.Request, feign.Request.Options)}
+     * {@link Client#execute(feign.Request, feign.Request.Options)}
      */
     private static final Integer FEIGN_ARGS_LEN = 2;
 
     /**
      * feign request args index
      *
-     * {@link org.springframework.cloud.openfeign.ribbon.LoadBalancerFeignClient#execute(feign.Request, feign.Request.Options)}
+     * {@link Client#execute(feign.Request, feign.Request.Options)}
      */
     private static final Integer FEIGN_REQUEST_ARGS_INDEX = 0;
 
     /**
      * feign options args index
      *
-     * {@link org.springframework.cloud.openfeign.ribbon.LoadBalancerFeignClient#execute(feign.Request, feign.Request.Options)}
+     * {@link Client#execute(feign.Request, feign.Request.Options)}
      */
     private static final Integer FEIGN_REQUEST_OPTION_ARGS_INDEX = 1;
 
