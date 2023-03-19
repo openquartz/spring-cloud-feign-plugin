@@ -7,13 +7,13 @@ import org.springframework.web.bind.annotation.GetMapping;
  * server one feign
  * @author svnee
  */
-@FeignClient(name = "server-one")
+@FeignClient(name = "server-one",url = "localhost:8080")
 public interface ServerOneFeign {
 
     /**
      * test hello method
      */
-    @GetMapping("/hello")
+    @GetMapping("/event/sync")
     void sayHello();
 
 }
