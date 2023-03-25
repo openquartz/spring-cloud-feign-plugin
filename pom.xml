@@ -21,7 +21,7 @@
         <revision>1.0.0-beta</revision>
 
         <spring-boot.version>2.3.2.RELEASE</spring-boot.version>
-        <spring-cloud.version>2.2.10.RELEASE</spring-cloud.version>
+        <spring-cloud.version>2.2.9.RELEASE</spring-cloud.version>
         <openfeign.version>10.1.0</openfeign.version>
 
         <maven.javadoc.failOnError>false</maven.javadoc.failOnError>
