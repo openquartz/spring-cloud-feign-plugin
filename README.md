@@ -65,10 +65,10 @@ feign.plugin.client.config.server-one-say-hello.connect-timeout=100000
 
 #### 2、配置
 ##### 公用配置
-如果需要禁用plugin 可以设置
+如果需要禁用plugin 可以设置。默认为：true.表示开启
 
 ```properties
-feign.plugin.enable=true
+feign.plugin.enable=false
 ```
 
 如果需要设置plugin 切面顺序。可以在配置中指定
