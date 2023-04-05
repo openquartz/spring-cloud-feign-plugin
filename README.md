@@ -2,7 +2,7 @@
 
 ## 欢迎Star (Welcome Star)!!!
 **[主页](https://svnlab.github.io/)** \
-**[Github](https://github.com/svnlab/spring-cloud-feign-plugin) [Gitee](https://gitee.com/svnee/spring-cloud-feign-plugin)**
+**[Github](https://github.com/openquartz/spring-cloud-feign-plugin)**
 
 
 ### 解决问题
