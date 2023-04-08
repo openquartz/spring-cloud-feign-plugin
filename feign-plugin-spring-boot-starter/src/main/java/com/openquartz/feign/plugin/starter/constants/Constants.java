@@ -1,4 +1,4 @@
-package org.svnee.feign.plugin.starter.constants;
+package com.openquartz.feign.plugin.starter.constants;
 
 /**
  * Constants

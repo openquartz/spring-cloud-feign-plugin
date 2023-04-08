@@ -1,4 +1,4 @@
-package org.svnee.feign.plugin.starter.autoconfig;
+package com.openquartz.feign.plugin.starter.autoconfig;
 
 import feign.Feign;
 import org.springframework.aop.Advisor;
@@ -10,10 +10,10 @@ import org.springframework.cloud.openfeign.ribbon.LoadBalancerFeignClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Role;
-import org.svnee.feign.plugin.starter.advisor.DynamicFeignTimeoutInterceptor;
-import org.svnee.feign.plugin.starter.advisor.FeignPluginAdvisor;
-import org.svnee.feign.plugin.starter.autoconfig.property.FeignPluginEnableProperties;
-import org.svnee.feign.plugin.starter.autoconfig.property.FeignTimeoutProperties;
+import com.openquartz.feign.plugin.starter.advisor.DynamicFeignTimeoutInterceptor;
+import com.openquartz.feign.plugin.starter.advisor.FeignPluginAdvisor;
+import com.openquartz.feign.plugin.starter.autoconfig.property.FeignPluginEnableProperties;
+import com.openquartz.feign.plugin.starter.autoconfig.property.FeignTimeoutProperties;
 
 /**
  * FeignPluginAutoConfiguration

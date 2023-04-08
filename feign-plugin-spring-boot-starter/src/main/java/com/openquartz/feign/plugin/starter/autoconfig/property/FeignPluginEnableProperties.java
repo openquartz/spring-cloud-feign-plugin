@@ -1,4 +1,4 @@
-package org.svnee.feign.plugin.starter.autoconfig.property;
+package com.openquartz.feign.plugin.starter.autoconfig.property;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

@@ -1,5 +1,6 @@
-package org.svnee.feign.plugin.starter.advisor;
+package com.openquartz.feign.plugin.starter.advisor;
 
+import com.openquartz.feign.plugin.starter.constants.Constants;
 import feign.Client;
 import feign.Request;
 import feign.Request.Options;
@@ -10,11 +11,10 @@ import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.svnee.feign.plugin.starter.autoconfig.property.FeignTimeoutProperties;
-import org.svnee.feign.plugin.starter.autoconfig.property.FeignTimeoutProperties.TimeoutProperty;
-import org.svnee.feign.plugin.starter.constants.Constants;
-import org.svnee.feign.plugin.starter.utils.CollectionUtils;
-import org.svnee.feign.plugin.starter.utils.MapUtils;
+import com.openquartz.feign.plugin.starter.autoconfig.property.FeignTimeoutProperties;
+import com.openquartz.feign.plugin.starter.autoconfig.property.FeignTimeoutProperties.TimeoutProperty;
+import com.openquartz.feign.plugin.starter.utils.CollectionUtils;
+import com.openquartz.feign.plugin.starter.utils.MapUtils;
 
 /**
  * DynamicFeignTimeoutInterceptor

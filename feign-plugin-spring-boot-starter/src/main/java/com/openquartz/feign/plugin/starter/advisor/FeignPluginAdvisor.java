@@ -1,4 +1,4 @@
-package org.svnee.feign.plugin.starter.advisor;
+package com.openquartz.feign.plugin.starter.advisor;
 
 import feign.Client;
 import java.lang.reflect.Method;

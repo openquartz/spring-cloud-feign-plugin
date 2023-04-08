@@ -1,10 +1,10 @@
-package org.svnee.feign.plugin.example.controller;
+package com.openquartz.feign.plugin.example.controller;
 
+import com.openquartz.feign.plugin.example.feign.ServerOneFeign;
 import javax.annotation.Resource;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.svnee.feign.plugin.example.feign.ServerOneFeign;
 
 /**
  * TestController

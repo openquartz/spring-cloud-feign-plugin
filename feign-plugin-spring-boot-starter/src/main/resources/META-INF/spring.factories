@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-org.svnee.feign.plugin.starter.autoconfig.FeignPluginAutoConfiguration
+com.openquartz.feign.plugin.starter.autoconfig.FeignPluginAutoConfiguration

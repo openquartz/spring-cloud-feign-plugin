@@ -57,7 +57,7 @@ feign.plugin.client.config.server-one-say-hello.connect-timeout=100000
 ```xml
 
 <dependency>
-    <groupId>org.svnee</groupId>
+    <groupId>com.openquartz</groupId>
     <artifactId>feign-plugin-spring-boot-starter</artifactId>
     <version>1.0.0</version>
 </dependency>

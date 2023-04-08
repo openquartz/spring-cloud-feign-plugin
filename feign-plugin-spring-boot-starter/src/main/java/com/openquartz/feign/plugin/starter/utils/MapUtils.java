@@ -1,4 +1,4 @@
-package org.svnee.feign.plugin.starter.utils;
+package com.openquartz.feign.plugin.starter.utils;
 
 import java.util.Map;
 
