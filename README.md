@@ -1,5 +1,7 @@
 # spring-cloud-feign-plugin
 
+> **注意**：本项目未发布到maven中央仓库，需要手动添加到本地仓库 或者 到私有仓库中使用。
+
 ## 欢迎Star (Welcome Star)!!!
 **[主页](https://svnlab.github.io/)** \
 **[Github](https://github.com/openquartz/spring-cloud-feign-plugin)**
